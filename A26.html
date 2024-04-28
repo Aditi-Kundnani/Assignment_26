@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotion Face Chooser</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .content {
+      text-align: center;
+      background-color: #f8f7f4; /* Light Goldenrod Yellow */
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: #add8e6; /* Light Blue */
+      color: #333;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #87ceeb; /* Sky Blue */
+    }
+
+    #emotionImage {
+      width: 300px;
+      height: 250px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Emotion Face Chooser</h1>
+      <button onclick="showEmotion('happy')">Happy</button>
+      <button onclick="showEmotion('sad')">Sad</button>
+      <button onclick="showEmotion('angry')">Angry</button>
+      <button onclick="showEmotion('surprised')">Surprised</button>
+      <br>
+      <img src="./images/emotions.jpg" alt="Emotion" id="emotionImage">
+    </div>
+  </div>
+
+  <script>
+    function showEmotion(emotion) {
+      var emotionImage = document.getElementById("emotionImage");
+      
+      // Update image source based on selected emotion
+      switch (emotion) {
+        case 'happy':
+          emotionImage.src = "./images/happy.jpg";
+          break;
+        case 'sad':
+          emotionImage.src = "./images/sad.webp";
+          break;
+        case 'angry':
+          emotionImage.src = "./images/angry.jpg";
+          break;
+        case 'surprised':
+          emotionImage.src = "./images/surprised.webp";
+          break;
+        default:
+          emotionImage.src = "";
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
